@@ -1,0 +1,118 @@
+body{background: #D4D4D4}
+
+@mixin FORM_Template($bg,$color){
+		$colorTwo:invert($bg);
+		width:50%;
+		margin: 0 auto 20px;
+		background:$bg ;
+		padding: 10px 10px 0px 10px;
+		border: 2px solid lighten($bg, 15%);
+		border-radius:10px;
+		color:$color;
+
+		label{
+			margin-left:18px;
+		}
+		.btn{
+			background: darken($colorTwo,12%);
+			border: 1px solid darken($colorTwo, 25%);
+			color:invert($color);
+			margin:0 10px 0 10px
+		}
+		.btn-cancel{
+			background: lighten($colorTwo,42%);
+			border: 1px solid lighten($colorTwo, 5%);
+		}
+		.shareBtn{
+			position:absolute;
+			right:140px;
+			top:-10px;
+			background:#B33505;
+			color:#C7C746;		
+		}
+		.deleteBtn{
+			position:absolute;
+			right:10px;
+			top:-10px;
+			background:#BB0505;
+			color:#C7C746;
+	}	
+
+}
+h1,h2,h3,h4,.signin-btn{
+	text-align:center;
+}
+.btn-group{
+	left:3%;
+}
+h1, .banner{
+	font-family: 'Merriweather', serif;
+	background: #9C3131;
+	color:#0A8534;
+	text-shadow:4px 2px 3px rgba(0,0,2,.7);
+	width: 100%;
+	margin:50px 0 50px;
+	font-size:5em;
+	border-width:10px 0 10px 0;
+	border-color:darken(#9C3131,20%); 
+}
+h2{
+	color: #B5FFCE;
+}
+.banner{color:#0B3118;}
+.banner-span{
+		color:#6B6BF8;
+		font-style: italic;
+}
+form{
+	@include FORM_Template(#365B31,#fff)
+	textarea{
+		height:200px;
+		margin-bottom:10px;
+	}
+	button{
+		float:right;
+
+	}
+}
+.new-choice{
+	background:none;
+	color:black;
+	border:none;
+	margin:0 0 10px 0;
+}
+.input-group{
+	color:black;
+	background:grey;
+}
+.signup-form{
+	@include FORM_Template(#B72626,#fff);
+	margin-top: 30px;
+	h4{
+		color:blue;
+	}
+}
+.vote-active{
+	@include FORM_Template(#90906F,#000);
+	width: 100%;
+	margin:0;
+	vertical-align: middle;
+	.btn{
+		margin: 0 auto;
+	}
+}
+.row{
+	margin-top:60px;
+	padding-left: 30px;
+	width: 80%;
+}
+.active{
+	border: none;
+	background: #5CBDD8;
+	color:darken(#5CBDD8,60%);
+	&:hover{
+	color:white;
+	background:#5CBDD8;		
+	  opacity:0.8;
+	}
+}
