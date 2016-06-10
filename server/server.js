@@ -7,7 +7,7 @@ const session=require('express-session')
 const mongoose = require('mongoose');
 
 
-mongoose.connect('mongodb://localhost:vote/vote');
+mongoose.connect('mongodb://user:1234@ds013024.mlab.com:13024/ballots');
 
 app.use(cors());
 app.use(bodyParser.json({ type: '*/*' }));
@@ -18,9 +18,6 @@ require('./routes/ballotRoute')(app)
 require('./routes/authRoute')(app)
 
 
-
-
-// Server Setup
 const port = process.env.PORT || 7777;
 app.listen(port);
 
