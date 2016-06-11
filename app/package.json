@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": "https://github.com/ahstein3521/free-code-camp-voting-app.git",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+    "start": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
