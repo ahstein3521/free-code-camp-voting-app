@@ -44,6 +44,4 @@ ReactDOM.render(
   </Provider>
   , document.querySelector('.home'));
 
-//TODO: Users shouldnt be able to vote more than once;
-
 

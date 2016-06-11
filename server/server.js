@@ -1,4 +1,5 @@
 const express = require('express');
+const favicon = require('express-favicon');
 const bodyParser = require('body-parser');
 const cors=require('cors');
 const app = express();
@@ -7,7 +8,7 @@ const session=require('express-session')
 const mongoose = require('mongoose');
 
 
-mongoose.connect('mongodb://localhost:vote/vote');
+mongoose.connect('mongodb://user:1234@ds013024.mlab.com:13024/ballots');
 
 app.use(cors());
 app.use(bodyParser.json({ type: '*/*' }));
@@ -27,6 +28,3 @@ app.listen(port);
 
 
 console.log('Server listening on:', port);
-
-
-//if logged in: Home route redirects to the /ballots

@@ -43,7 +43,7 @@ class List extends Component {
   }
 }
 function mapStateToProps(state) {
-  console.log(state)
+  
   return {ballots: state.ballots,
           auth:state.auth,
           ballotSelected:state.ballotSelected};

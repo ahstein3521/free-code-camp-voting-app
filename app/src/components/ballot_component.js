@@ -75,7 +75,7 @@ import _ from 'lodash'
 
 
 function mapStateToProps({ballotSelected,ballots}){
-  console.log({ballotSelected})
+  
   return {ballotSelected,ballots}
   }
   

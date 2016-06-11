@@ -1,6 +1,6 @@
 const passport = require('passport');
-const jwtLogin=require('./Strategies/jwt.strategy')
-const localLogin=require('./Strategies/local.strategy')
+const jwtLogin=require('./strategies/jwt.strategy')
+const localLogin=require('./strategies/local.strategy')
 
 
 

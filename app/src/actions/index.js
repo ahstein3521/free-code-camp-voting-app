@@ -4,7 +4,7 @@ import {ACTIVE_BALLOT,FETCH_BALLOTS,REMOVE_BALLOT,SUBMIT_VOTE,ADD_OPTION, TOGGLE
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 
-const Root_Url='http://localhost:7777'
+const Root_Url='https://ahstein3521-vote-app.herokuapp.com'
 
 export function selectBallot(ballot) {
   return {type: ACTIVE_BALLOT,payload: ballot};
