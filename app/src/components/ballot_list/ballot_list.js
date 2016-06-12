@@ -6,7 +6,7 @@ const BallotList = (props) => {
     return (
       <ListItem
         key={i}
-        onDelete={props.onDelete.bind(null,i)}
+        onDelete={props.onDelete}
         selected={props.selected}
         isUserList={props.isUserList}
         onBallotSelect={props.onBallotSelect}

@@ -29,11 +29,17 @@ class List extends Component {
    return List 
 }//toggle between user's own ballots and whole collection
   
+  removeBallot(id){
+    const index=_.findIndex(this.props.ballots,(v)=>{return v._id==id});
+    this.props.removeBallot(id,index);
+    this.props.selectBallot(null);  
+  }
+
   render() { 
     return (
           <BallotList 
             onBallotSelect={(b)=>{this.props.selectBallot(b)}} 
-                  onDelete={(index,id)=>{this.props.removeBallot(id,index)}}
+                  onDelete={(id)=>{this.removeBallot(id)}}
                    ballots={this.toggleList()}  
                 isUserList={this.isUserList()}       
                   selected={this.props.ballotSelected}>

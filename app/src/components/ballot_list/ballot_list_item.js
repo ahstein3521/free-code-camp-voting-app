@@ -6,7 +6,7 @@ const BallotListItem = ({ballot, onBallotSelect,selected,onDelete,isUserList,onS
    let Buttons=(isUserList)?<div><button className='btn-danger' onClick={()=>{onDelete(ballot._id)}}>
                                 <span className='glyphicon glyphicon-trash'></span>
                              </button>
-                             <a href={`http://localhost:8080/public/${ballot._id}`} target='_blank'><button className='btn-share'>
+                             <a href={`/public/${ballot._id}`} target='_blank'><button className='btn-share'>
                                 <span className='glyphicon glyphicon-link'></span>
                               </button></a></div>: <p></p>;
 

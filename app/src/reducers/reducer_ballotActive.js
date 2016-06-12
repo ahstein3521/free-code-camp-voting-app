@@ -4,7 +4,7 @@ import {ACTIVE_BALLOT,ACTIVE_OPTION,TOGGLE_FORM,ADD_OPTION,
 export default function(state = null, action) {
   switch(action.type) {
 	  case ACTIVE_BALLOT:
-	    return Object.assign({},{...state,...action.payload, currentSelection:null, view:null, newChoice:null});
+	    return Object.assign({},{...state,...action.payload, currentSelection:null, view:null, newChoice:'Other'});
 	  case ACTIVE_OPTION:
 	  	return Object.assign({}, {...state,currentSelection:action.payload})
 	  case ADD_OPTION:

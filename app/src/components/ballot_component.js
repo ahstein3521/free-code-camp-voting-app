@@ -28,13 +28,12 @@ import _ from 'lodash'
   handleSubmit(){
     let ballot=this.props.ballotSelected;
     //Just in case an appended option not in the DB was selected
-    if(ballot.newChoice&&!ballot.currentSelection){  
-      ballot.options=[...ballot.options,ballot.newChoice];
-      this.props.selectOption(ballot.newChoice)
-      return this.props.submitVote(ballot);
+    if(ballot.currentSelection.name==ballot.newChoice.name){
+      ballot.options.push(ballot.newChoice)
     }
     
     ballot.currentSelection.votes++;
+    
     this.props.submitVote(ballot)
   }
   

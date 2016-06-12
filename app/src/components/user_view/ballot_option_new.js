@@ -10,61 +10,60 @@ import _ from 'lodash'
 
   constructor(props){
     super(props);
-    
     this.handleOnChange=this.handleOnChange.bind(this)
-    this.handleOptionSubmit=this.handleOptionSubmit.bind(this)
     this.toggleSelection=this.toggleSelection.bind(this)
-
-    this.state={selected:false,newOption:'',label:'Other',checked:false}
+    
+    this.state={newOption:'',checked:false}
   }
-  handleOptionSubmit(e){
-    e.preventDefault();
-    const name=Format(this.state.newOption);
-    this.props.addChoice({name ,votes:1})
-    this.setState({label:name,selected:!this.state.selected,checked:true})
-
-  }
+  
   handleOnChange(e){
-    this.setState({newOption:e.target.value,checked:!this.state.checked})
+   this.setState({newOption:e.target.value});
+   this.props.addChoice({name:e.target.value,votes:1});
+   this.props.selectOption({name:e.target.value,votes:1});
+   
   }
-  
   toggleSelection(){
-    this.setState({checked:!this.state.checked,selected:!this.state.selected})
-  }  
+   this.setState({checked:!this.state.checked});
   
+  }  
   renderRadio(){
     return <label className="radio"> 
               <input name='vote' type="radio" checked={this.state.checked} onChange={this.toggleSelection}/> 
-                {this.state.label}
-                {this.renderEditLink()}
+                {this.props.ballot.newChoice.name||'Other'}               
             </label>
   }
   renderEditForm(){
     return( 
     <div className='new-choice'>
-       <input type='text' value={this.state.newOption} onChange={this.handleOnChange}/>
-       <input type='submit' className={'btn-sm btn-danger'} onClick={this.handleOptionSubmit} value="Add"/>
+       <input type='text' 
+              value={this.state.newOption} 
+            onBlur={this.toggleSelection} 
+            onChange={this.handleOnChange}
+            autoFocus/>
     </div>
     )
   }
-  renderEditLink(){
-    if(!this.state.selected && this.state.label!=='Other'){
-      return <p className='edit-link' onClick={()=>{this.setState({selected:true,label:'Other'})}}>Edit?</p>
-    }
-    return <p></p>
-  }
-  render(){
-    if(this.state.selected && this.state.label=='Other'){
+  renderField(){
+    if(this.state.checked){
+
       return this.renderEditForm();
     }
     return this.renderRadio();
   }
+  render(){
+    return this.renderField();
+  }
 }
+function mapStateToProps(state){
+  console.log(state.ballotSelected)
+  return {ballot:state.ballotSelected}
+}
+
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(actions, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(newChoice);
+export default connect(mapStateToProps, mapDispatchToProps)(newChoice);
 
 
