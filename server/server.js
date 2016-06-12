@@ -19,12 +19,10 @@ require('./routes/ballotRoute')(app)
 require('./routes/authRoute')(app)
 
 
-
-
-// Server Setup
 const port = process.env.PORT || 7777;
 app.listen(port);
 
 
 
 console.log('Server listening on:', port);
+
