@@ -1,6 +1,6 @@
 const jwt = require('jwt-simple');
 const User = require('../models/user');
-require('../secret');
+// require('../secret');
 
 
 function tokenForUser(user) {

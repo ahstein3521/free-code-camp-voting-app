@@ -7,8 +7,9 @@ const passport=require('passport');
 const session=require('express-session')
 const mongoose = require('mongoose');
 
+// require('./secret') uncomment for local build
 
-mongoose.connect('mongodb://user:1234@ds013024.mlab.com:13024/ballots');
+mongoose.connect(process.env.MONGO_URI);
 
 app.use(cors());
 app.use(bodyParser.json({ type: '*/*' }));

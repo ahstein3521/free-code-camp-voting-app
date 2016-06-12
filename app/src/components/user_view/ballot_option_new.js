@@ -55,7 +55,6 @@ import _ from 'lodash'
   }
 }
 function mapStateToProps(state){
-  console.log(state.ballotSelected)
   return {ballot:state.ballotSelected}
 }
 

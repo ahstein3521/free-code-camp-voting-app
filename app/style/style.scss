@@ -25,7 +25,7 @@ body{background: #D4D4D4}
 		}
 		.shareBtn{
 			position:absolute;
-			right:140px;
+			right:160px;
 			top:-10px;
 			background:#B33505;
 			color:#C7C746;		
@@ -106,9 +106,12 @@ form{
 	padding-left: 30px;
 	width: 80%;
 }
+.list-group-item{
+	cursor:pointer;
+}
 .active{
 	border: none;
-	background: #5CBDD8;
+	background: #5CBFD8;
 	color:darken(#5CBDD8,60%);
 	&:hover{
 	color:white;

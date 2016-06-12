@@ -38,7 +38,9 @@ ReactDOM.render(
       <Route path='/public(/:id)' component={PublicView}/>
       <Route path='/user' component={Auth(UserView)}/>
       <Route path='/signup' component={Signup}/>
-      
+    </Route>
+    <Route path="/public" component={App} >
+      <Route path="(/:id)" component={PublicView}/>
     </Route>
   </Router>
   </Provider>
